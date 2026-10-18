@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Informationswelt | Zurück zu dir</title>
+<style>
+:root {
+  --bg: #f7f3ec;
+  --cream: #fffdf9;
+  --gold: #ad9062;
+  --text: #453a30;
+  --muted: #786c60;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+main {
+  max-width: 950px;
+  margin: auto;
+  padding: 55px 20px;
+}
+header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.brand {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 13px;
+  font-weight: bold;
+}
+h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: normal;
+  margin: 12px 0;
+}
+.intro {
+  max-width: 630px;
+  margin: auto;
+  color: var(--muted);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.card {
+  background: var(--cream);
+  border: 1px solid #e7dac7;
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 8px 24px #4638200a;
+}
+.symbol {
+  font-size: 42px;
+}
+h2 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+.card p {
+  color: var(--muted);
+  min-height: 95px;
+}
+.tag {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: bold;
+}
+.button {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: 30px;
+  background: var(--gold);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 18px;
+}
+.button:hover {
+  background: #8e734c;
+}
+.pending {
+  background: #e8e1d6;
+  color: #776c60;
+  cursor: default;
+}
+footer {
+  text-align: center;
+  margin-top: 55px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 650px) {
+  .cards { grid-template-columns: 1fr; }
+  .card p { min-height: 0; }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand">ZURÜCK ZU DIR</div>
+    <h1>Deine Informationswelt</h1>
+    <p class="intro">
+      Wissen öffnet neue Möglichkeiten.
+      Entdecke wertvolle Informationen,
+      hilfreiche Impulse und Wege zu einem
+      bewussten, gesunden und selbstbestimmten Leben.
+      In deinem Tempo und ganz ohne Verpflichtung.
+    </p>
+  </header>
+
+  <section class="cards">
+
+    <article class="card">
+      <div class="symbol">📖</div>
+      <div class="tag">FREI ZUGÄNGLICH</div>
+      <h2>Informationen für Kunden</h2>
+      <p>
+        Entdecke unsere Informationsbroschüren
+        rund um Nähren, Bewegen, Versorgen
+        und Wirken. Informiere dich frei
+        über die Möglichkeiten und finde
+        heraus, was dich persönlich anspricht.
+      </p>
+      <a class="button" href="kunden/">
+        Broschüren entdecken
+      </a>
+    </article>
+
+    <article class="card">
+      <div class="symbol">🔒</div>
+      <div class="tag">PARTNERBEREICH</div>
+      <h2>Informationen für Partner</h2>
+      <p>
+        Deine Wissens- und Ausbildungswelt
+        mit Produktinformationen, Schulungen,
+        Gesundheitskonzepten, Präsentationen
+        und weiterführenden Materialien.
+      </p>
+      <!-- Erst nach Einrichtung des
+           serverseitigen Passwortschutzes
+           durch einen echten Link ersetzen. -->
+      <span class="button pending">
+        Zugang in Vorbereitung
+      </span>
+    </article>
+
+  </section>
+
+  <footer>
+    Zurück zu dir · Wissen teilen ·
+    Bewusstsein stärken · Gemeinsam wachsen
+  </footer>
+</main>
+</body>
+</html>
