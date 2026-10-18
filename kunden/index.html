@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kundenwelt | Zurück zu dir</title>
+<style>
+:root {
+  --bg:#f7f3ec;
+  --paper:#fffdf9;
+  --gold:#ad9062;
+  --text:#453a30;
+  --muted:#786c60;
+  --line:#e7dac7;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial,sans-serif;
+  line-height:1.6;
+}
+main {
+  max-width:1050px;
+  margin:auto;
+  padding:45px 20px;
+}
+header {
+  text-align:center;
+  margin-bottom:42px;
+}
+.brand {
+  color:var(--gold);
+  letter-spacing:4px;
+  font-size:13px;
+  font-weight:bold;
+}
+h1 {
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:clamp(35px,5vw,54px);
+}
+.intro {
+  max-width:680px;
+  margin:auto;
+  color:var(--muted);
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.card {
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:28px;
+}
+.symbol { font-size:35px; }
+h2 {
+  font-family:Georgia,serif;
+  font-size:27px;
+  font-weight:normal;
+  margin:12px 0;
+}
+.card p {
+  color:var(--muted);
+  min-height:65px;
+}
+.button {
+  display:inline-block;
+  border:0;
+  border-radius:30px;
+  padding:12px 22px;
+  background:var(--gold);
+  color:white;
+  text-decoration:none;
+  font:inherit;
+  font-weight:bold;
+  cursor:pointer;
+}
+.button:hover { background:#8e734c; }
+.button:disabled {
+  background:#ded4c5;
+  cursor:not-allowed;
+}
+.back {
+  display:inline-block;
+  color:var(--gold);
+  text-decoration:none;
+  margin-bottom:25px;
+}
+.notice {
+  margin-top:35px;
+  padding:20px;
+  border-radius:15px;
+  background:#eee8df;
+  color:var(--muted);
+  text-align:center;
+}
+.reader {
+  position:fixed;
+  inset:0;
+  background:rgba(25,22,19,.93);
+  z-index:100;
+  display:none;
+  flex-direction:column;
+}
+.reader.active { display:flex; }
+.reader-bar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+  color:white;
+  gap:12px;
+}
+.reader-bar button {
+  border:1px solid #bdb4a5;
+  border-radius:20px;
+  background:transparent;
+  color:white;
+  padding:9px 16px;
+  cursor:pointer;
+}
+.reader iframe {
+  width:100%;
+  flex:1;
+  border:0;
+  background:white;
+}
+footer {
+  text-align:center;
+  padding:35px 0;
+  color:var(--muted);
+  font-size:13px;
+}
+@media(max-width:650px) {
+  .cards { grid-template-columns:1fr; }
+  .card p { min-height:0; }
+}
+</style>
+</head>
+<body>
+
+<main>
+  <a class="back" href="../">
+    ← Zurück zur Informationswelt
+  </a>
+
+  <header>
+    <div class="brand">ZURÜCK ZU DIR</div>
+    <h1>Wissen für deinen Weg</h1>
+    <p class="intro">
+      Entdecke unsere vier Informationsbereiche.
+      Hier findest du Impulse und Grundlagen
+      für deine persönliche Gesundheit,
+      dein Wohlbefinden und deine Entwicklung.
+      Lies das, was dich interessiert,
+      in deinem eigenen Tempo und
+      ganz ohne Verpflichtung.
+    </p>
+  </header>
+
+  <section class="cards">
+
+    <article class="card">
+      <div class="symbol">🌿</div>
+      <h2>NÄHREN</h2>
+      <p>
+        Ernährung verstehen und bewusste
+        Entscheidungen für deinen Alltag treffen.
+      </p>
+      <button class="button"
+        onclick="openBook('NÄHREN',
+        'broschueren/01-naehren.pdf')">
+        Broschüre lesen
+      </button>
+    </article>
+
+    <article class="card">
+      <div class="symbol">🧘</div>
+      <h2>BEWEGEN</h2>
+      <p>
+        Bewegung, Regeneration und
+        Wohlbefinden als Teil deines Alltags.
+      </p>
+      <button class="button"
+        onclick="openBook('BEWEGEN',
+        'broschueren/02-bewegen.pdf')">
+        Broschüre lesen
+      </button>
+    </article>
+
+    <article class="card">
+      <div class="symbol">✨</div>
+      <h2>VERSORGEN</h2>
+      <p>
+        Bewusste Versorgung und individuelle
+        Bedürfnisse besser kennenlernen.
+      </p>
+      <button class="button"
+        onclick="openBook('VERSORGEN',
+        'broschueren/03-versorgen.pdf')">
+        Broschüre lesen
+      </button>
+    </article>
+
+    <article class="card">
+      <div class="symbol">🌟</div>
+      <h2>WIRKEN</h2>
+      <p>
+        Entdecke neue Perspektiven,
+        persönliche Entwicklung und
+        Möglichkeiten der Veränderung.
+      </p>
+      <button class="button"
+        onclick="openBook('WIRKEN',
+        'broschueren/04-wirken.pdf')">
+        Broschüre lesen
+      </button>
+    </article>
+
+  </section>
+
+  <div class="notice">
+    Diese Informationswelt ist frei zugänglich.
+    Du entscheidest selbst, welche Themen
+    du entdecken möchtest.
+    Es ist keine Registrierung erforderlich.
+  </div>
+
+  <footer>
+    Zurück zu dir · Deine Informationswelt
+  </footer>
+</main>
+
+<div id="reader" class="reader"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Broschüre lesen">
+
+  <div class="reader-bar">
+    <strong id="readerTitle"></strong>
+    <button onclick="closeBook()">
+      ✕ Schließen
+    </button>
+  </div>
+
+  <iframe id="pdfFrame"
+          title="Broschürenansicht"></iframe>
+</div>
+
+<script>
+function openBook(title, file) {
+  document.getElementById('readerTitle')
+    .textContent = title;
+
+  document.getElementById('pdfFrame').src =
+    file + '#toolbar=0&navpanes=0';
+
+  document.getElementById('reader')
+    .classList.add('active');
+
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBook() {
+  document.getElementById('reader')
+    .classList.remove('active');
+
+  document.getElementById('pdfFrame').src = '';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeBook();
+});
+</script>
+
+</body>
+</html>
