@@ -82,6 +82,33 @@ h2 {
   cursor:pointer;
 }
 .button:hover { background:#8e734c; }
+.cert-link {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:0;
+  background:transparent;
+  color:#80613b;
+  padding:9px 0 0;
+  font:inherit;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  text-align:left;
+}
+.cert-dot {
+  display:inline-flex;
+  width:23px;
+  height:23px;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:var(--gold);
+  color:white;
+  font-size:12px;
+  flex-shrink:0;
+}
+.cert-link:hover { text-decoration:underline; }
 .back {
   display:inline-block;
   color:var(--gold);
@@ -193,6 +220,11 @@ footer {
     <article class="card">
       <div class="symbol">✨</div>
       <h2>VERSORGEN</h2>
+      <button class="cert-link" type="button"
+        onclick="openBook('Original-OPC-Echtheitszertifikat', 'broschueren/OPC-Zertifikat.pdf')">
+        <span class="cert-dot" aria-hidden="true">✓</span>
+        Original-OPC-Zertifikat ansehen
+      </button>
       <p>
         Bewusste Versorgung und individuelle
         Bedürfnisse besser kennenlernen.
